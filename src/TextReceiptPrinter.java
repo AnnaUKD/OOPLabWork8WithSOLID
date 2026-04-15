@@ -1,17 +1,16 @@
-import java.util.List;
+import java.util.ArrayList;
 
+public class TextReceiptPrinter implements ReceiptPrinter {
 
-class TextReceiptPrinter implements ReceiptPrinter {
-    @Override
-    public void print(List<OrderItem> items, double subtotal,
-                      double total, String discountInfo) {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Кафе 'Затишок' | Ваше замовлення: ");
-        for (OrderItem item : items) {
-            sb.append(item.getMenuItem().getName())
-                    .append(" x").append(item.getQty()).append(", ");
+    public void print(ArrayList<OrderItem> items, double subtotal, double total, String discountInfo) {
+        String result = "Кафе 'Затишок' | ";
+
+        for (int i = 0; i < items.size(); i++) {
+            OrderItem item = items.get(i);
+            result = result + item.menuItem.name + " x" + item.count + ", ";
         }
-        sb.append(String.format("| %s | Разом: %.2f грн", discountInfo, total));
-        System.out.println("[SMS/Email]: " + sb);
+
+        result = result + "| " + discountInfo + " | До сплати: " + total + " грн";
+        System.out.println("[SMS]: " + result);
     }
 }
