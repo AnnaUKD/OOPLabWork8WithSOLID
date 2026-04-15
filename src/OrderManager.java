@@ -1,33 +1,34 @@
 import java.util.ArrayList;
-import java.util.List;
 
-class OrderManager {
-    private final List<OrderItem> items = new ArrayList<>();
-    private final List<MenuItem>  menu;
+public class OrderManager {
 
-    public OrderManager(List<MenuItem> menu) {
+    ArrayList<MenuItem>  menu  = new ArrayList<MenuItem>();
+    ArrayList<OrderItem> items = new ArrayList<OrderItem>();
+
+    public OrderManager(ArrayList<MenuItem> menu) {
         this.menu = menu;
     }
 
-    public void addItem(String itemName, int qty) {
-        for (MenuItem m: menu){
-            if (m.getName().equals(ItemName)) {
-                items.add(new OrderItem(m, qty));
-                System.out.println("Додано: " + itemName + " х" + qty);
+    public void addItem(String name, int count) {
+        for (int i = 0; i < menu.size(); i++) {
+            MenuItem m = menu.get(i);
+            if (m.name.equals(name)) {
+                items.add(new OrderItem(m, count));
+                System.out.println("Додано: " + name + " x" + count);
                 return;
             }
         }
-        System.out.println("Страву не знайдено")
+        System.out.println("Страву не знайдено: " + name);
     }
 
-    public List<OrderItem> getItems() { 
+    public ArrayList<OrderItem> getItems() {
         return items;
     }
 
     public double getSubtotal() {
         double total = 0;
-        for (OrderItem item : items){
-            total += item.getLineTotal();
+        for (int i = 0; i < items.size(); i++) {
+            total = total + items.get(i).getLineTotal();
         }
         return total;
     }
