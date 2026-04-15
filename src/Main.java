@@ -3,8 +3,6 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-
-        // Меню кафе
         List<MenuItem> menu = List.of(
                 new MenuItem("Кава", 45.0),
                 new MenuItem("Чай", 30.0),
