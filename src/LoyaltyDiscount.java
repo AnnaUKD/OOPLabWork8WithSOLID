@@ -1,10 +1,9 @@
-class LoyaltyDiscount implements DiscountStrategy {
-    @Override
+public class LoyaltyDiscount implements DiscountStrategy {
+
     public double apply(double total) {
-        return total * 0.88;
+        return total - (total * 12 / 100);
     }
 
-    @Override
     public String description() {
         return "Знижка постійного клієнта: -12%";
     }
