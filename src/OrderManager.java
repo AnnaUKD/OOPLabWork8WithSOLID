@@ -10,16 +10,14 @@ class OrderManager {
     }
 
     public void addItem(String itemName, int qty) {
-        menu.stream()
-                .filter(m -> m.getName().equalsIgnoreCase(itemName))
-                .findFirst()
-                .ifPresentOrElse(
-                        m -> {
-                            items.add(new OrderItem(m, qty));
-                            System.out.println("Додано: " + itemName + " x" + qty);
-                        },
-                        () -> System.out.println("Страву не знайдено: " + itemName)
-                );
+        for (MenuItem m: menu){
+            if (m.getName().equals(ItemName)) {
+                items.add(new OrderItem(m, qty));
+                System.out.println("Додано: " + itemName + " х" + qty);
+                return;
+            }
+        }
+        System.out.println("Страву не знайдено")
     }
 
     public List<OrderItem> getItems() { return items; }
