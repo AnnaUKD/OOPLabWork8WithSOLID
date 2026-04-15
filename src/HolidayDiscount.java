@@ -12,6 +12,6 @@ class HolidayDiscount implements DiscountStrategy {
 
     @Override
     public String description() {
-        return String.format("Святкова знижка: -%.0f%%", percent);
+        return String.format("Святкова знижка: " + percent + " %");
     }
 }
