@@ -1,10 +1,9 @@
-class BuyOneGetOneDiscount implements DiscountStrategy {
-    @Override
+public class BuyOneGetOneDiscount implements DiscountStrategy {
+
     public double apply(double total) {
-        return total * 0.75;
+        return total - (total * 25 / 100);
     }
 
-    @Override
     public String description() {
         return "Акція «1+1»: -25%";
     }
