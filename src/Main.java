@@ -6,9 +6,9 @@ public class Main {
 
         // Меню кафе
         List<MenuItem> menu = List.of(
-                new MenuItem("Кава",     45.0),
-                new MenuItem("Чай",      30.0),
-                new MenuItem("Круасан",  55.0),
+                new MenuItem("Кава", 45.0),
+                new MenuItem("Чай", 30.0),
+                new MenuItem("Круасан", 55.0),
                 new MenuItem("Тістечко", 70.0)
         );
 
