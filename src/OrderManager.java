@@ -20,9 +20,15 @@ class OrderManager {
         System.out.println("Страву не знайдено")
     }
 
-    public List<OrderItem> getItems() { return items; }
+    public List<OrderItem> getItems() { 
+        return items;
+    }
 
     public double getSubtotal() {
-        return items.stream().mapToDouble(OrderItem::getLineTotal).sum();
+        double total = 0;
+        for (OrderItem item : items){
+            total += item.getLineTotal();
+        }
+        return total;
     }
 }
