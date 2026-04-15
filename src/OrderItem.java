@@ -1,18 +1,14 @@
 public class OrderItem {
-    private final MenuItem menuItem;
-    private final int qty;
 
-    public OrderItem(MenuItem menuItem, int qty) {
+    MenuItem menuItem;
+    int count;
+
+    public OrderItem(MenuItem menuItem, int count) {
         this.menuItem = menuItem;
-        this.qty = qty;
+        this.count    = count;
     }
-    public MenuItem getMenuItem() {
-        return menuItem;
-    }
-    public int getQty() {
-        return qty;
-    }
-    public double getLineTotal(){
-        return menuItem.getPrice() * qty;
+
+    public double getLineTotal() {
+        return menuItem.price * count;
     }
 }
