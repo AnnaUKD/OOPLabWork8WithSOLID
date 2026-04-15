@@ -14,9 +14,9 @@ class ConsoleReceiptPrinter implements ReceiptPrinter {
                     item.getLineTotal());
         }
         System.out.println("-------------------------");
-        System.out.printf("Підсума:     %.2f грн%n", subtotal);
+        System.out.printf("Підсума: " + subtotal + "грн.");
         System.out.println(discountInfo);
-        System.out.printf("До сплати:   %.2f грн%n", total);
+        System.out.printf("До сплати: " + total + "грн.");
         System.out.println("=========================\n");
     }
 }
