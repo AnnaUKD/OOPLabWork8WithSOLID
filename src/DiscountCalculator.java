@@ -1,5 +1,6 @@
 public class DiscountCalculator {
-    private final DiscountStrategy strategy;
+
+    DiscountStrategy strategy;
 
     public DiscountCalculator(DiscountStrategy strategy) {
         this.strategy = strategy;
