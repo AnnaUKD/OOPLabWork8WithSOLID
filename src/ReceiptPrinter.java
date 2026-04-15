@@ -1,6 +1,6 @@
-import java.util.ArrayList;
+import java.util.List;
 
 public interface ReceiptPrinter {
-    void print(ArrayList<OrderItem> items, double subtotal,
+    void print(List<OrderItem> items, double subtotal,
                double total, String discountInfo);
 }

@@ -1,14 +1,15 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        ArrayList<MenuItem> menu = new ArrayList<MenuItem>();
-        menu.add(new MenuItem("Кава",     45.0));
-        menu.add(new MenuItem("Чай",      30.0));
-        menu.add(new MenuItem("Круасан",  55.0));
-        menu.add(new MenuItem("Тістечко", 70.0));
+        List<MenuItem> menu = new ArrayList<MenuItem>();
+        menu.add(new MenuItem("Кава",45.0));
+        menu.add(new MenuItem("Чай", 30.0));
+        menu.add(new MenuItem("Круасан",55.0));
+        menu.add(new MenuItem("Тістечко",70.0));
 
 
         System.out.println("=== Знижка на обсяг (консольний чек) ===");

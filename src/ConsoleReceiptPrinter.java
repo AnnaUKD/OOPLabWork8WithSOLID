@@ -1,15 +1,14 @@
-import java.util.ArrayList;
+import java.util.List;
 
 public class ConsoleReceiptPrinter implements ReceiptPrinter {
 
-    public void print(ArrayList<OrderItem> items, double subtotal, double total, String discountInfo) {
+    public void print(List<OrderItem> items, double subtotal, double total, String discountInfo) {
 
         System.out.println("========== ЧЕК ==========");
         System.out.println("Кафе 'Затишок'");
         System.out.println("-------------------------");
 
-        for (int i = 0; i < items.size(); i++) {
-            OrderItem item = items.get(i);
+        for (OrderItem item : items) {
             double lineTotal = item.getLineTotal();
             System.out.println(item.menuItem.name + " x" + item.count + " = " + lineTotal + " грн");
         }
